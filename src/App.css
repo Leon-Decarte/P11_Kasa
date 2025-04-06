@@ -11,25 +11,10 @@
 
 
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 
 
-.read-the-docs {
-  color: #888;
-}
+
+
 
 /*i'm working on a project (renting housing) using react and vite , i use also react router where i need to creat multiple pages of my project , i have in src file : pages (with About.jsx, home) , app.jsx , app.css , index.css , logements.json (with all the data for renting places) , main.jsx.  I need to use Sass so give me the correct css structure and the way to enable sass in my react project .*/

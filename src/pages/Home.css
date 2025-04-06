@@ -1,4 +1,5 @@
 /* P11_KASA/src/pages/Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .home-container {
     display: flex;
@@ -119,13 +120,14 @@
 }
 
 .card-title {
+    height: 15%;
+    text-align: left;
     color: #FFF;
     font-family: Montserrat;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 142.6%;
-    /* 25.668px */
+
     position: absolute;
     bottom: 15px;
     left: 15px;
