@@ -1,0 +1,170 @@
+.logement-container {
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  padding: 0 1rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
+
+.carousel {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.carousel img {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+.image-count {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.left-column {
+  flex: 1 1 60%;
+}
+
+.left-column h1 {
+  font-size: 24px;
+  color: #FF6060;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #FF6060;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.host-name {
+  color: #FF6060;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.host-picture {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ccc;
+}
+
+.rating {
+  font-size: 20px;
+}
+
+.star {
+  color: #E3E3E3;
+}
+
+.star.filled {
+  color: #FF6060;
+}
+
+.details-sections {
+  display: flex;
+  
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dropdown {
+  flex: 1;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.dropdown h3 {
+  background-color: #FF6060;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+}
+
+.dropdown p,
+.dropdown ul {
+  padding: 1rem;
+  margin: 0;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 14px;
+}
+
+.footer p {
+  font-size: 20px;
+  margin: 0 0 0.5rem;
+  font-family: 'Pacifico', cursive;
+}
