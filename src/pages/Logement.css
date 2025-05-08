@@ -133,27 +133,63 @@
 
 .dropdown {
   flex: 1;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 10px;
-  padding: 1rem;
+  margin-bottom: 20px;
+  overflow: hidden;
+  
 }
 
-.dropdown h3 {
-  background-color: #FF6060;
+.dropdown-header {
+  background-color: #ff6060;
   color: white;
-  padding: 0.5rem 1rem;
-  margin: 0;
-  border-radius: 8px 8px 0 0;
   font-size: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.dropdown-header h3 {
+  max-height: 20px;
+  font-size: 18px;
+  line-height: normal;
+  margin-block-start: 0;
+    margin-block-end: 0;
+}
+.dropdown-arrow {
+  width: 16px;
+  height: 10px;
+  transition: transform 0.3s ease;
 }
 
-.dropdown p,
-.dropdown ul {
-  padding: 1rem;
-  margin: 0;
-  background-color: white;
-  border-radius: 0 0 8px 8px;
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
 }
+
+.dropdown-content {
+  padding: 16px;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease-in-out;
+  background-color: #f7f7f7;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .footer {
   background-color: black;

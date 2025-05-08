@@ -1,16 +1,18 @@
 // Logement.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import logements from '../logements.json';
 import './Logement.css';
 import logo from '../assets/LOGO_KASA.png';
-import vectorIcon from '../assets/Vector.png'; // Import your arrow icon
-
+import vectorIcon from '../assets/Vector.png'; // Arrow icon
 
 function Logement() {
   const { id } = useParams();
   const navigate = useNavigate();
   const logement = logements.find(item => item.id === id);
+
+  const [showDescription, setShowDescription] = useState(false);
+  const [showEquipments, setShowEquipments] = useState(false);
 
   useEffect(() => {
     if (!logement) {
@@ -22,7 +24,7 @@ function Logement() {
 
   const renderStars = (rating) => {
     return [...Array(5)].map((_, i) => (
-      <span key={i} className={`star ${i < parseInt(rating) ? 'filled' : 'empty'}`}>★</span>
+      <span key={i} className={`star ${i < parseInt(rating) ? 'filled' : 'empty'}`}>🟊</span>
     ));
   };
 
@@ -66,17 +68,42 @@ function Logement() {
       </section>
 
       <div className="details-sections">
+        {/* Description Dropdown */}
         <div className="dropdown">
-          <h3>Description</h3>
-          <p>{logement.description}</p>
+          <div className="dropdown-header" onClick={() => setShowDescription(!showDescription)}>
+            <h3>Description</h3>
+            <img
+              src={vectorIcon}
+              alt="toggle"
+              className={`dropdown-arrow ${showDescription ? 'rotated' : ''}`}
+            />
+          </div>
+          {showDescription && (
+            <div className="dropdown-content">
+              <p>{logement.description}</p>
+            </div>
+          )}
         </div>
+
+        {/* Equipments Dropdown */}
         <div className="dropdown">
-          <h3>Équipements</h3>
-          <ul>
-            {logement.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
+          <div className="dropdown-header" onClick={() => setShowEquipments(!showEquipments)}>
+            <h3>Équipements</h3>
+            <img
+              src={vectorIcon}
+              alt="toggle"
+              className={`dropdown-arrow ${showEquipments ? 'rotated' : ''}`}
+            />
+          </div>
+          {showEquipments && (
+            <div className="dropdown-content">
+              <ul>
+                {logement.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
 
