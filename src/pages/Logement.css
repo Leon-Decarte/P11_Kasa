@@ -30,21 +30,49 @@
   margin-bottom: 1.5rem;
 }
 
-.carousel img {
+.carousel .carousel-image {
   width: 100%;
   object-fit: cover;
   height: 400px;
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  width: 50px;
+  height: auto;
+  
+}
+
+.arrow-icon {
+  width: 100%;
+  height: auto;
+}
+
+.left-arrow {
+  left: 10px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
 
 .image-count {
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
+
 
 .main-info {
   display: flex;

@@ -5,6 +5,7 @@ import logements from '../logements.json';
 import './Logement.css';
 import logo from '../assets/LOGO_KASA.png';
 import vectorIcon from '../assets/Vector.png'; // Arrow icon
+import arrowslider from '../assets/arrow-slider.svg'; // Arrow icon for slider
 
 function Logement() {
   const { id } = useParams();
@@ -13,6 +14,7 @@ function Logement() {
 
   const [showDescription, setShowDescription] = useState(false);
   const [showEquipments, setShowEquipments] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     if (!logement) {
@@ -21,6 +23,17 @@ function Logement() {
   }, [logement, navigate]);
 
   if (!logement) return null;
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1
+    );
+  };
 
   const renderStars = (rating) => {
     return [...Array(5)].map((_, i) => (
@@ -39,8 +52,19 @@ function Logement() {
       </header>
 
       <div className="carousel">
-        <img src={logement.pictures[0]} alt={logement.title} />
-        <span className="image-count">1/{logement.pictures.length}</span>
+        <button className="arrow left-arrow" onClick={handlePreviousImage}>
+          <img src={arrowslider} alt="Previous" className="arrow-icon rotated" />
+        </button>
+        <img className='carousel-image'
+          src={logement.pictures[currentImageIndex]}
+          alt={logement.title}
+        />
+        <button className="arrow right-arrow" onClick={handleNextImage}>
+          <img src={arrowslider} alt="Next" className="arrow-icon" />
+        </button>
+        <span className="image-count">
+          {currentImageIndex + 1}/{logement.pictures.length}
+        </span>
       </div>
 
       <section className="main-info">
