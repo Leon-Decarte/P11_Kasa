@@ -1,35 +1,19 @@
-/* P11_KASA/src/pages/Home.css */
+/* P11_KASA/src/pages/Accueil.css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.home-container {
+
+
+
+.home-body{
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
-
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: black;
-    font-weight: 500;
-    border-bottom: 2px solid black; /* Blue line under the active page */
-
-
-}
 
 .hero-banner {
     position: relative;
