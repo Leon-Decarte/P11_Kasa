@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import logements from '../../logements.json';
-import Navigation from '../../components/Navigation/Navigation';
+import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer/Footer';
 import Carousel from '../../components/Carousel/Carousel';
 import MainInfo from '../../components/MainInfo/MainInfo';
@@ -32,7 +32,8 @@ export default function Logement() {
     <div className="logement-page">
       <Navigation />
 
-      <Carousel
+      <div className='logement-container'>
+        <Carousel
         pictures={logement.pictures}
         currentIndex={currentIndex}
         onNext={nextImage}
@@ -59,6 +60,7 @@ export default function Logement() {
             ))}
           </ul>
         </Dropdown>
+        </div>
       </div>
 
       <Footer />
